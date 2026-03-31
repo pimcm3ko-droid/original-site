@@ -1,0 +1,7 @@
+$bp: 900px;
+
+@mixin sp {
+    @media(max-width: $bp){
+        @content;
+    }
+}

@@ -1,0 +1,141 @@
+@use "mixin"as m;
+@use "variable"as v;
+
+.menu {
+    padding-bottom: 380px;
+    text-align: center;
+    color: rgba(47,47,47,1);
+    background-color: rgba(167,179,199,1);
+    .tab-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 64px;
+        .tab-title {
+            display: flex;
+            gap: 10px;
+            li {
+                flex: 1;
+                padding: 24px;
+                cursor: pointer;
+                text-align: center;
+                background-color: rgba(244,241,237,1);
+                border: 2px solid rgba(47,47,47,1);
+                border-radius: 8px 8px 0 0;
+                font-weight: 300;
+                transition: .3s;
+
+                &:hover {
+                background-color: rgba(230,230,230,1);
+                }
+
+                &.selected {
+                background-color: rgba(244,241,237,1);
+                font-weight: 500;
+                border-bottom: none;
+                position: relative;
+                z-index: 2;
+                }
+                @include m.sp {
+                    padding: 8px;
+                }
+            }
+        }
+        .tab-content {
+            display: none;
+            padding: 32px 24px;
+            min-height: 150px;
+            color: rgba(47,47,47,1);
+            line-height: 1.6;
+            border: 2px solid rgba(47,47,47,1);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background: rgba(244,241,237,1);
+            margin-top: -1px;
+            h3 {
+                margin-bottom: 16px;
+                text-align: left;
+                font-size: 32px;
+                @include m.sp {
+                    font-size: 24px;
+                }
+            }
+            ul {
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+                gap: 20px;
+                margin-bottom: 32px;
+                li {
+                    text-align: center;
+                    img {
+                        width: 100%;
+                        height: 60%;
+                        margin-bottom: 24px;
+                        object-fit: cover;
+                        @include m.sp {
+                            width: 80%;
+                        }
+                    }
+                    p {
+                        margin-bottom: 0;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        @include m.sp {
+                            font-size: 10px;
+                        }
+                    }
+                    .price {
+                        font-size: 16px;
+                        @include m.sp {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            @include m.sp {
+                padding: 16px;
+            }
+        }
+        .tab-content.selected {
+            display: block;
+            border-top: 2px solid rgba(47,47,47,1);
+        }
+    }
+
+
+    /* 必須：隠すための設定 */
+    .detail-list li.is-hidden {
+        display: none;
+    }
+
+    /* もっと見るボタン */
+    .more-button, .close-button {
+        display: inline-block;
+        padding: 16px 64px;
+        background-color: rgba(47,47,47,1);
+        color: rgba(244,241,237,1);
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 50px;
+        @include m.sp {
+            padding: 8px 32px;
+            font-size: 10px;
+        }
+    }
+
+    .more-button:hover, .close-button:hover {
+        opacity: 0.8;
+    }
+
+    .tab-content {
+        display: none;
+
+        &.selected {
+        display: block;
+        }
+  }
+  @include m.sp {
+    padding-bottom: 140px;
+  }
+}

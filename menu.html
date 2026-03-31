@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>HYUGGE CAFE</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet"  href="css/slick.css">
+    <link rel="stylesheet"  href="css/slick-theme.css">
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=B612&family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="menu">
+        <h2 class="title">MENU</h2>
+        <div class="tab-container">
+            <ul class="tab-title">
+                <li class="selected" data-id="tab-1">All</li>
+                <li data-id="tab-2">Coffee</li>
+                <li data-id="tab-3">Food</li>
+                <li data-id="tab-4">Other</li>
+            </ul>
+            <div class="tab-content selected accordion-list" id="tab-1">
+                <div class="detail-list">
+                    <h3>Coffee</h3>
+                    <ul>
+                        <li>
+                            <img src="img/menu_coffee1.jpg" alt="コーヒーの画像">
+                            <p>HYGGE BLEND COFFEE</p>
+                            <p>ヒュッゲブレンドコーヒー</p>
+                            <p class="price">&yen;600</p>
+                            <p>Hot / Iced</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_coffee2.jpg" alt="カフェラテの画像">
+                            <p>Cafe Latte</p>
+                            <p>カフェラテ</p>
+                            <p class="price">&yen;650</p>
+                            <p>Hot / Iced</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_coffee3.jpg" alt="カフェモカの画像">
+                            <p>Coffe Mocha</p>
+                            <p>カフェモカ</p>
+                            <p class="price">&yen;680</p>
+                            <p>Hot / Iced</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_coffee4.jpg" alt="ハニーシナモンラテの画像">
+                            <p>Honey Cinnamon Latte</p>
+                            <p>ハニーシナモンラテ</p>
+                            <p class="price">&yen;680</p>
+                            <p>Hot / Iced</p>
+                        </li>
+                    </ul>
+                    <h3>Food</h3>
+                    <ul>
+                        <li>
+                            <img src="img/menu_food1.png" alt="サーモンとクリームチーズのオープンサンドの画像">
+                            <p>Salmon＆CreamCheese<br>Open Sandwich</p>
+                            <p>サーモンとクリームチーズの<br>オープンサンド</p>
+                            <p class="price">&yen;950</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_food2.jpg" alt="北欧風ミートボールプレートの画像">
+                            <p>Nordic Meatball Plate</p>
+                            <p>北欧風ミートボールプレート</p>
+                            <p class="price">&yen;1,300</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_food3.jpg" alt="シナモンロールの画像">
+                            <p>Cinnamon Roll</p>
+                            <p>シナモンロール</p>
+                            <p class="price">&yen;450</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_food4.jpg" alt="ベリーパンケーキの画像">
+                            <p>Berry Pancake</p>
+                            <p>ベリーパンケーキ</p>
+                            <p class="price">&yen;1,200</p>
+                        </li>
+                    </ul>
+                    <h3>Other</h3>
+                    <ul>
+                        <li>
+                            <img src="img/menu_other1.jpg" alt="アールグレイの画像">
+                            <p>Earl Grey</p>
+                            <p>アールグレイ</p>
+                            <p class="price">&yen;500</p>
+                            <p>Hot / Iced</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_other2.jpg" alt="メロンクリームソーダの画像">
+                            <p>Melon Cream Soda</p>
+                            <p>メロンクリームソーダ</p>
+                            <p class="price">&yen;700</p>
+                            <p>Iced</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_other3.jpg" alt="アップルジンジャーの画像">
+                            <p>Apple Ginger</p>
+                            <p>アップルジンジャー</p>
+                            <p class="price">&yen;680</p>
+                            <p>Hot</p>
+                        </li>
+                        <li>
+                            <img src="img/menu_other4.png" alt="きのことチキンのクリームスープの画像">
+                            <p>Mushrooms&ChiCken<br>Cream Soup</p>
+                            <p>きのことチキンの<br>クリームスープ</p>
+                            <p class="price">&yen;780</p>
+                            <p>Hot</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="link-button"><a class="more-button">もっと見る</a></p>
+                <p class="link-button" style="display:none;"><a class="close-button">閉じる</a></p>
+            </div>
+            <div class="tab-content" id="tab-2">
+                <ul>
+                    <li>
+                        <img src="img/menu_coffee1.jpg" alt="コーヒーの画像">
+                        <p>HYGGE BLEND COFFEE</p>
+                        <p>ヒュッゲブレンドコーヒー</p>
+                        <p class="price">&yen;600</p>
+                        <p>Hot / Iced</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_coffee2.jpg" alt="カフェラテの画像">
+                        <p>Cafe Latte</p>
+                        <p>カフェラテ</p>
+                        <p class="price">&yen;650</p>
+                        <p>Hot / Iced</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_coffee3.jpg" alt="カフェモカの画像">
+                        <p>Coffe Mocha</p>
+                        <p>カフェモカ</p>
+                        <p class="price">&yen;680</p>
+                        <p>Hot / Iced</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_coffee4.jpg" alt="ハニーシナモンラテの画像">
+                        <p>Honey Cinnamon Latte</p>
+                        <p>ハニーシナモンラテ</p>
+                        <p class="price">&yen;680</p>
+                        <p>Hot / Iced</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="tab-3">
+                <ul>
+                    <li>
+                        <img src="img/menu_food1.png" alt="サーモンとクリームチーズのオープンサンドの画像">
+                        <p>Salmon＆CreamCheese<br>Open Sandwich</p>
+                        <p>サーモンとクリームチーズの<br>オープンサンド</p>
+                        <p class="price">&yen;950</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_food2.jpg" alt="北欧風ミートボールプレートの画像">
+                        <p>Nordic Meatball Plate</p>
+                        <p>北欧風ミートボールプレート</p>
+                        <p class="price">&yen;1,300</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_food3.jpg" alt="シナモンロールの画像">
+                        <p>Cinnamon Roll</p>
+                        <p>シナモンロール</p>
+                        <p class="price">&yen;450</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_food4.jpg" alt="ベリーパンケーキの画像">
+                        <p>Berry Pancake</p>
+                        <p>ベリーパンケーキ</p>
+                        <p class="price">&yen;1,200</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="tab-4">
+                <ul>
+                    <li>
+                        <img src="img/menu_other1.jpg" alt="アールグレイの画像">
+                        <p>Earl Grey</p>
+                        <p>アールグレイ</p>
+                        <p class="price">&yen;500</p>
+                        <p>Hot / Iced</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_other2.jpg" alt="メロンクリームソーダの画像">
+                        <p>Melon Cream Soda</p>
+                        <p>メロンクリームソーダ</p>
+                        <p class="price">&yen;700</p>
+                        <p>Iced</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_other3.jpg" alt="アップルジンジャーの画像">
+                        <p>Apple Ginger</p>
+                        <p>アップルジンジャー</p>
+                        <p class="price">&yen;680</p>
+                        <p>Hot</p>
+                    </li>
+                    <li>
+                        <img src="img/menu_other4.png" alt="きのことチキンのクリームスープの画像">
+                        <p>Mushrooms&ChiCken<br>Cream Soup</p>
+                        <p>きのことチキンの<br>クリームスープ</p>
+                        <p class="price">&yen;780</p>
+                        <p>Hot</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

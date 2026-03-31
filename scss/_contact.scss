@@ -1,0 +1,98 @@
+@use "mixin"as m;
+@use "variable"as v;
+
+.contact {
+    padding-bottom: 360px;
+    text-align: center;
+    color: rgba(47,47,47,1);
+    background-color: rgba(167,179,199,1);
+    .contact-form {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 0;
+        background-color: rgba(193,106,76,1);
+        border-radius: 50px;
+        dl {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            dt {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: left;
+                font-size: 16px;
+                font-weight: 600;
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            dd {
+                width: 100%;
+                margin-bottom: 48px;
+                line-height: 30px;
+                .text {
+                    width: 100%;
+                    padding: 5px;
+                    line-height: 1;
+                    height: 3em;
+                    background-color: rgba(244,241,237,1);
+                    border-radius: 10px;
+                }
+                .message {
+                    width: 100%;
+                    padding: 10px;
+                    line-height: 1;
+                    height: 10em;
+                    background-color: rgba(244,241,237,1);
+                    border-radius: 10px;
+                }
+                @include m.sp {
+                    margin-bottom: 24px;
+                }
+            }
+            @include m.sp {
+                margin-bottom: 0;
+            }
+        }
+        .form-btn {
+            width: 250px;
+            margin: 0 auto;
+            padding: 8px 24px;
+            background-color: rgba(244,241,237,1);
+            color: rgba(47,47,47,1);
+            border-radius: 10px;
+            letter-spacing: 1.5em;
+            text-indent: 1.5em;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            @include m.sp {
+                width: 170px;
+                padding: 4px 16px;
+            }
+        }
+        .form-btn:hover {
+            box-shadow: 4px 6px 0px 4px rgba(47,47,47,1);
+            transform: translateY(-2px);
+        }
+        .form-btn:active {
+            box-shadow: none;
+            transform: translateY(4px);
+        }
+        @include m.sp {
+            max-width: 450px;
+        }
+    }
+    @include m.sp {
+        padding-bottom: 130px;
+    }
+}
+
+p {
+    .wpcf7-spinner {
+        display: none;
+    }
+    span::before {
+        display: none;
+    }
+}

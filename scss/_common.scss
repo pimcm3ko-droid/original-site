@@ -1,0 +1,111 @@
+@use "mixin"as m;
+@use "variable"as v;
+
+body {
+    background-color: rgba(244,241,237,1);
+    font-family: 'B612', sans-serif;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    padding-top: 96px;
+    @include m.sp {
+        padding-top: 48px;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(193,106,76,1);
+    transition: all 0.6s ease;
+
+}
+
+.btn {
+    padding: 8px 72px;
+    color: rgba(47,47,47,1);
+    background-color: rgba(244,241,237,1);
+    border: 1px solid rgba(193,106,76,1);
+    // border-radius: 30px;
+    transition: all 0.6s ease;
+}
+
+.btn:hover {
+    background-color: rgba(193,106,76,1);
+    color:  rgba(244,241,237,1);
+}
+
+p {
+    margin-bottom: 32px;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    line-height: 2.0;
+    @include m.sp {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+}
+
+.section-title {
+    width: 100%;
+    margin-bottom: 56px;
+    text-align: center;
+    position: relative;
+    font-size: 64px;
+    color: rgba(193,106,76,1);
+    font-family: "Forum", sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    @include m.sp {
+        font-size: 32px;
+    }
+}
+.section-title::after {
+    width: 160px;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    content: "";
+    background-color: rgba(193,106,76,1);
+    @include m.sp {
+        width: 80px;
+        top: 48px;
+    }
+}
+
+.title {
+    padding: 40px;
+    padding-top: 100px;
+    text-align: left;
+    font-size: 128px;
+    color: rgba(193,106,76,1);
+    font-family: "Forum", sans-serif;
+    letter-spacing: 0.1em;
+    text-indent: 0.1em;
+    font-weight: normal;
+    @include m.sp {
+        padding: 20px;
+        font-size: 56px;
+    }
+}
+
+.fadein {
+    width: 100%;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 1s ease;
+}

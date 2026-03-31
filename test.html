@@ -1,0 +1,76 @@
+<div class="accordion-list">
+  <ul class="detail-list">
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム1</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム2</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム3</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム4</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム5</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム6</p></a></li>
+    <li><a href="#"><div class="img-box"><img src="/img/cat.png"></div><p>アイテム7</p></a></li>
+  </ul>
+
+  <p class="link-button"><a class="more-button">もっと見る</a></p>
+  <p class="link-button" style="display:none;"><a class="close-button">閉じる</a></p>
+</div>
+
+/* 必須：隠すための設定 */
+.detail-list li.is-hidden {
+  display: none;
+}
+
+/* ボタンの装飾（お好みで） */
+.link-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more-button, .close-button {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.more-button:hover, .close-button:hover {
+  background-color: #666;
+}
+
+
+  const showCount = 3; // 最初に表示する数
+  const addCount = 3;  // 追加する数
+
+$('.accordion-list').each(function () {
+    const $container = $(this);
+    const $list = $container.find('.detail-list li');
+    const $moreBtn = $container.find('.more-button');
+    const $closeBtn = $container.find('.close-button');
+
+    // 1. 初期表示：showCount番目以降にクラスをつけて隠す
+    $list.slice(showCount).addClass('is-hidden');
+
+    // 2. 「もっと見る」クリックイベント
+    $moreBtn.on('click', function () {
+      // 隠れている要素の中から、次のaddCount分を表示
+      $container.find('.is-hidden').slice(0, addCount).removeClass('is-hidden');
+
+      // 全て表示されたらボタンを切り替える
+      if ($container.find('.is-hidden').length === 0) {
+        $moreBtn.parent().hide(); // 「もっと見る」を隠す
+        $closeBtn.parent().show(); // 「閉じる」を表示
+      }
+    });
+
+    // 3. 「閉じる」クリックイベント
+    $closeBtn.on('click', function () {
+      // 再び初期状態に戻す
+      $list.slice(showCount).addClass('is-hidden');
+      $closeBtn.parent().hide();
+      $moreBtn.parent().show();
+
+      // リストの先頭へスムーズにスクロール（親切設計）
+      $('html, body').animate({ scrollTop: $container.offset().top - 50 }, 500);
+    });
+});

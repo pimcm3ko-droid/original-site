@@ -1,0 +1,237 @@
+@use "mixin" as m;
+@use "variable" as v;
+
+header {
+  width: 100%;
+  height: 100px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  .close-logo {
+    margin: 10px;
+    a {
+      img {
+        width: 100px;
+        @include m.sp {
+          width: 60px;
+        }
+      }
+    }
+  }
+
+  .open-logo {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    .sns {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .icon {
+        margin-right: 5px;
+        img {
+          width: 50px;
+          @include m.sp {
+            width: 40px;
+          }
+        }
+        .line {
+          width: 40px;
+          @include m.sp {
+            width: 30px;
+          }
+        }
+      }
+      .icon:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // 修正箇所
+    .toggle_btn {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      cursor: pointer;
+
+      /* 通常（☰） */
+      span {
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: rgba(47, 47, 47, 1);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease;
+        opacity: 1;
+      }
+      span:nth-child(1) {
+        top: 35%;
+      }
+      span:nth-child(2) {
+        top: 50%;
+      } // ← これは無くてもOK
+      span:nth-child(3) {
+        top: 65%;
+      }
+
+      /* ☰ → ● */
+      &.step-dot {
+        span {
+          top: 50%;
+          left: 50%;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+        }
+        span:nth-child(1),
+        span:nth-child(3) {
+          opacity: 0;
+        }
+      }
+
+      /* ● → × */
+      &.step-dot.step-close {
+        span {
+          top: 50%;
+          left: 50%;
+          width: 50%;
+          height: 2px;
+          border-radius: 0;
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        span:nth-child(1) {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+      @include m.sp {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    .toggle_btn:hover {
+      opacity: 0.5;
+    }
+  }
+  @include m.sp {
+    height: 80px;
+    padding-top: 0;
+  }
+}
+
+.open {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  .close-logo {
+    display: none;
+  }
+  nav {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    transition: all 0.6s ease;
+    visibility: visible;
+    opacity: 1;
+    color: white;
+    z-index: 50;
+    background-color: rgba(193, 106, 76, 1);
+    .inner {
+      margin-right: 150px;
+      text-align: center;
+      .open-logo {
+        display: inline-block;
+        margin-bottom: 32px;
+        img {
+          width: 200px;
+          @include m.sp {
+            width: 100px;
+          }
+        }
+        @include m.sp {
+          margin-bottom: 0;
+        }
+      }
+      .address {
+        margin-bottom: 0;
+        @include m.sp {
+          font-size: 12px;
+          line-height: normal;
+        }
+      }
+      @include m.sp {
+        margin: 0;
+      }
+    }
+    
+    ul {
+      font-family: "Forum", sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.1em;
+      text-indent: 0.1em;
+      li {
+        margin-bottom: 24px;
+        a {
+          color: rgba(244, 241, 237, 1);
+        }
+        a:hover {
+          color: rgba(47, 47, 47, 1);
+        }
+        @include m.sp {
+          margin-bottom: 8px;
+        }
+      }
+      @include m.sp {
+        font-size: 18px;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+    }
+    @include m.sp {
+      flex-direction: column-reverse;
+    }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+}
