@@ -3,21 +3,21 @@
 
 
 footer {
+    position: relative;
     padding-top: 60px;
     padding-bottom: 20px;
     text-align: center;
-    position: relative;
     .wave {
+        position: absolute;
+        top: -52%;
         width: 100%;
         height: 380px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        position: absolute;
-        top: -52%;
         @include m.sp {
-            height: 125px;
             top: -14%;
+            height: 125px;
         }
     }
 
@@ -29,17 +29,17 @@ footer {
         }
     }
     ul {
-        width: 30%;
-        margin: 0 auto;
-        margin-bottom: 30px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        width: 30%;
+        margin: 0 auto;
+        margin-bottom: 30px;
         li {
             margin: 10px;
             a {
                 font-size: 14px;
-                color: rgba(47,47,47,1);
+                color: v.$font-color;
             }
             a:hover {
                 opacity: 0.5;
@@ -47,6 +47,7 @@ footer {
         }
         @include m.sp {
             width: 90%;
+            margin-bottom: 0;
         }
     }
 
@@ -69,12 +70,15 @@ footer {
     }
     .address {
         line-height: 1.5;
+        @include m.sp {
+            font-size: 12px;
+        }
     }
     .copy {
         margin-top: 20px;
         margin-bottom: 0;
-        text-align: center;
         font-size: 10px;
+        text-align: center;
     }
     .policy {
         margin: 0;
@@ -82,14 +86,14 @@ footer {
     }
 }
 .blue {
-    background-color: rgba(167,179,199,1);
+    background-color: v.$main-color;
     .wave-blue {
         background-image: url(../img/wave_blue.png);
     }
 }
 
 .white {
-    background-color: rgba(244,241,237,1);
+    background-color: v.$base-color;
     .wave-white {
         background-image: url(../img/wave_white.png);
     }

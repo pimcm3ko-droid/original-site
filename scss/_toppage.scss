@@ -2,20 +2,27 @@
 @use "variable"as v;
 
 .concept {
-    background-color: rgba(167,179,199,1);
+    background-color: v.$main-color;
     .section-title {
         margin-top: 0;
     }
     .wrapper {
-        padding: 0 50px;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
         margin-bottom: 100px;
+        padding: 0 48px;
         text-align: center;
-        color: rgba(244,241,237,1);
+        color: v.$base-color;
         p {
             line-height: 2.5;
             @include m.sp {
                 line-height: 2.0;
             }
+        }
+        @include m.sp {
+            max-width: 500px;
+            padding: 0 16px;
         }
     }
     
@@ -41,17 +48,17 @@
             flex-wrap: wrap;
             justify-content: center;
             li {
+                position: relative;
                 margin: 20px;
                 margin-top: 0;
-                position: relative;
                 p {
-                    color: transparent;
-                    -webkit-text-stroke: 1px rgba(47,47,47,1);
+                    position: absolute;
                     font-size: 48px;
                     font-weight: 600;
                     letter-spacing: 0.1em;
                     text-indent: 0;
-                    position: absolute;
+                    color: transparent;
+                    -webkit-text-stroke: 1px v.$font-color;
                     @include m.sp {
                         font-size: 32px;
                     }
@@ -59,8 +66,8 @@
                 img {
                     width: 300px;
                     height: 300px;
-                    border-radius: 50%;
                     object-fit: cover;
+                    border-radius: 50%;
                     @include m.sp {
                         width: 200px;
                         height: 200px;
@@ -69,9 +76,15 @@
             }
         }
         .text {
-            padding-top: 20px;
+            width: 100%;
+            max-width: 630px;
+            margin: 0 auto;
+            padding-top: 40px;
             a {
                 display: inline-block;
+            }
+            @include m.sp {
+                padding: 0 16px;
             }
         }
     }
@@ -87,47 +100,50 @@
             li {
                 margin-bottom: 48px;
                 a {
-                    padding-bottom: 10px;
                     position: relative;
-                    color: rgba(47,47,47,1);
-                    // border-bottom: 4px dashed rgba(47,47,47,1);
+                    padding-bottom: 8px;
+                    color: v.$font-color;
                     letter-spacing: 0.3em;
                     line-height: 3.0;
                     span {
                         margin-right: 10px; 
                         padding: 5px 10px;
-                        color: rgba(244,241,237,1);
-                        background-color: rgba(193,106,76,1);
                         border-radius: 50px;
+                        background-color: v.$sub-color;
                         font-size: 12px;
                         letter-spacing: 0.1em;
+                        color: v.$base-color;
                         @include m.sp {
                             font-size: 10px;
                         }
                     }
                     @include m.sp {
+                        border-bottom: 3px dashed v.$font-color;
                         font-size: 14px;
-                        border-bottom: 3px dashed rgba(47,47,47,1);
+                        line-height: 2.0;
                     }
                 }
                 a:hover {
                     opacity: 0.8;
                 }
                 a::after {
-                    border-bottom: 3px dashed rgba(47,47,47,1);
                     content: "";
                     position: absolute;
-                    bottom: -10px;
+                    bottom: 0;
                     left: 50%;
-                    transform: translateX(-50%);
                     width: 330px;
+                    border-bottom: 3px dashed v.$font-color;
+                    transform: translateX(-50%);
                     @include m.sp {
                         display: none;
                     }
                 }
                 @include m.sp {
-                    margin-bottom: 24px;
+                    margin-bottom: 32px;
                 }
+            }
+            @include m.sp {
+                margin-bottom: 32px;
             }
         }
         a {
@@ -146,18 +162,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
         .images {
-            width: 50%;
             display: flex;
             justify-content: center;
+            width: 50%;
             img {
                 width: 50%;
-                height: 50vh;
+                height: 420px;
                 object-fit: cover;
-                border: 5px solid rgba(193,106,76,1);
+                border: 5px solid v.$sub-color;
                 border-radius: 30px 0 0 30px;
                 @include m.sp {
-                    height: 30vh;
+                    height: 200px;
                 }
             }
             img:last-child {
@@ -167,7 +186,7 @@
         }
         .text {
             width: 50%;
-            padding: 50px;
+            padding: 48px;
             padding-bottom: 0;
             p {
                 margin-top: -10%;
@@ -182,6 +201,7 @@
             }
             @include m.sp {
                 width: auto;
+                padding: 24px;
             }
         }
         @include m.sp {
@@ -189,9 +209,17 @@
             align-items: center;
         }
     }
+    @include m.sp {
+        padding-bottom: 48px;
+    }
 }
 
 .toppage_shopinformation {
+    h3::after {
+        @include m.sp {
+            top: 80px;
+        }
+    }
     .wrapper {
         width: 80%;
         margin: 0 auto;
@@ -207,6 +235,14 @@
         .shopname {
             margin-top: 30px;
             font-size: 24px;
+            @include m.sp {
+                margin-bottom: 8px;
+            }
+        }
+        .address {
+            @include m.sp {
+                line-height: 1.4;
+            }
         }
         a {
             display: inline-block;
@@ -219,24 +255,25 @@
     margin-bottom: 400px;
     padding-top: 0;
     a {
-        width: 60%;
-        height: 20vh;
-        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba(193,106,76,1);
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        margin: 0 auto;
         border-radius: 20px;
+        background-color: v.$sub-color;
         p {
             margin: 20px;
-            color: rgba(244,241,237,1);
+            color: v.$base-color;
             @include m.sp {
                 margin: 0;
                 padding: 5px 16px;
             }
         }
         .contact_title {
-            width: 30%;
+            width: 40%;
             padding-top: 16px;
             font-size: 32px;
             font-weight: 800;
@@ -251,7 +288,7 @@
             }
         }
         .text {
-            width: 70%;
+            width: 60%;
             padding-bottom: 16px;
             font-size: 14px;
             @include m.sp {
@@ -262,8 +299,7 @@
         }
         @include m.sp {
             flex-direction: column;
-            width: 80%;
-            height: auto;
+            max-width: 420px;
         }
     }
     a:hover {

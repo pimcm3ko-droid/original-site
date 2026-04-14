@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>HYUGGE CAFE</title>
-    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="description" content="HYUGGE CAFE">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/logo.png">
     <?php wp_head(); ?>

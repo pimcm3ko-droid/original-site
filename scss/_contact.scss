@@ -2,17 +2,23 @@
 @use "variable"as v;
 
 .contact {
+    padding: 0 16px;
     padding-bottom: 360px;
+    background-color: v.$main-color;
     text-align: center;
-    color: rgba(47,47,47,1);
-    background-color: rgba(167,179,199,1);
+    color: v.$font-color;
+    .title {
+        @include m.sp {
+            padding: 16px 0;
+        }
+    }
     .contact-form {
-        max-width: 700px;
         width: 100%;
+        max-width: 700px;
         margin: 0 auto;
         padding: 40px 0;
-        background-color: rgba(193,106,76,1);
         border-radius: 50px;
+        background-color: v.$sub-color;
         dl {
             width: 90%;
             margin: 0 auto;
@@ -20,9 +26,9 @@
             dt {
                 width: 100%;
                 margin-bottom: 10px;
-                text-align: left;
                 font-size: 16px;
                 font-weight: 600;
+                text-align: left;
                 p {
                     margin-bottom: 0;
                 }
@@ -33,19 +39,19 @@
                 line-height: 30px;
                 .text {
                     width: 100%;
-                    padding: 5px;
-                    line-height: 1;
                     height: 3em;
-                    background-color: rgba(244,241,237,1);
+                    padding: 5px;
                     border-radius: 10px;
+                    background-color: v.$base-color;
+                    line-height: 1;
                 }
                 .message {
                     width: 100%;
-                    padding: 10px;
-                    line-height: 1;
                     height: 10em;
-                    background-color: rgba(244,241,237,1);
+                    padding: 10px;
                     border-radius: 10px;
+                    background-color: v.$base-color;
+                    line-height: 1;
                 }
                 @include m.sp {
                     margin-bottom: 24px;
@@ -59,12 +65,12 @@
             width: 250px;
             margin: 0 auto;
             padding: 8px 24px;
-            background-color: rgba(244,241,237,1);
-            color: rgba(47,47,47,1);
             border-radius: 10px;
+            background-color: v.$base-color;
+            color: v.$font-color;
             letter-spacing: 1.5em;
             text-indent: 1.5em;
-            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 0 0 0 v.$font-color;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
             @include m.sp {
                 width: 170px;
@@ -72,7 +78,7 @@
             }
         }
         .form-btn:hover {
-            box-shadow: 4px 6px 0px 4px rgba(47,47,47,1);
+            box-shadow: 4px 6px 0px 4px v.$font-color;
             transform: translateY(-2px);
         }
         .form-btn:active {
@@ -81,6 +87,7 @@
         }
         @include m.sp {
             max-width: 450px;
+            padding: 24px 0;
         }
     }
     @include m.sp {

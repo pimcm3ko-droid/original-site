@@ -3,9 +3,9 @@
 
 .menu {
     padding-bottom: 380px;
+    background-color: v.$main-color;
     text-align: center;
-    color: rgba(47,47,47,1);
-    background-color: rgba(167,179,199,1);
+    color: v.$font-color;
     .tab-container {
         width: 100%;
         margin: 0 auto;
@@ -16,24 +16,23 @@
             li {
                 flex: 1;
                 padding: 24px;
-                cursor: pointer;
-                text-align: center;
-                background-color: rgba(244,241,237,1);
-                border: 2px solid rgba(47,47,47,1);
+                border: 2px solid v.$font-color;
                 border-radius: 8px 8px 0 0;
+                background-color: v.$base-color;
                 font-weight: 300;
+                text-align: center;
                 transition: .3s;
-
+                cursor: pointer;
                 &:hover {
-                background-color: rgba(230,230,230,1);
+                background-color: v.$base-color;
                 }
 
                 &.selected {
-                background-color: rgba(244,241,237,1);
-                font-weight: 500;
-                border-bottom: none;
                 position: relative;
                 z-index: 2;
+                border-bottom: none;
+                background-color: v.$base-color;
+                font-weight: 500;
                 }
                 @include m.sp {
                     padding: 8px;
@@ -42,36 +41,36 @@
         }
         .tab-content {
             display: none;
-            padding: 32px 24px;
             min-height: 150px;
-            color: rgba(47,47,47,1);
-            line-height: 1.6;
-            border: 2px solid rgba(47,47,47,1);
+            margin-top: -0.5px;
+            padding: 32px 24px;
+            border: 2px solid v.$font-color;
             border-top: none;
             border-radius: 0 0 8px 8px;
-            background: rgba(244,241,237,1);
-            margin-top: -1px;
+            background: v.$base-color;
+            color: v.$font-color;
+            line-height: 1.6;
             h3 {
                 margin-bottom: 16px;
-                text-align: left;
                 font-size: 32px;
+                text-align: left;
                 @include m.sp {
                     font-size: 24px;
                 }
             }
             ul {
-                height: 100%;
                 display: grid;
                 grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-                gap: 20px;
+                height: 100%;
                 margin-bottom: 32px;
+                gap: 20px;
                 li {
                     text-align: center;
                     img {
                         width: 100%;
                         height: 60%;
-                        margin-bottom: 24px;
                         object-fit: cover;
+                        margin-bottom: 24px;
                         @include m.sp {
                             width: 80%;
                         }
@@ -98,7 +97,10 @@
         }
         .tab-content.selected {
             display: block;
-            border-top: 2px solid rgba(47,47,47,1);
+            border-top: 1px solid v.$font-color;
+        }
+        @include m.sp {
+            padding: 0 16px;
         }
     }
 
@@ -112,12 +114,12 @@
     .more-button, .close-button {
         display: inline-block;
         padding: 16px 64px;
-        background-color: rgba(47,47,47,1);
-        color: rgba(244,241,237,1);
-        cursor: pointer;
-        text-decoration: none;
-        transition: 0.3s;
         border-radius: 50px;
+        background-color: v.$font-color;
+        text-decoration: none;
+        color: v.$base-color;
+        cursor: pointer;
+        transition: 0.3s;
         @include m.sp {
             padding: 8px 32px;
             font-size: 10px;

@@ -1,43 +1,5 @@
 $(function () {
   /*=================================================
-  ハンバーガ―メニュー
-  ===================================================*/
-  // // ハンバーガーメニューをクリックした時
-  // $(".toggle_btn").on("click", function () {
-  //   $("header").toggleClass("open");
-  // });
-  // // メニューのリンクをクリックした時
-  // $('a[href^="#"]').on('click', function () {
-  //   $('header').toggleClass('open');
-  //   $('.toggle_btn').toggleClass('step-dot');
-  // });
-
-
-  /*=================================================
-  menu news タブコンテンツ
-  ===================================================*/
-  // const tabContainer = document.querySelector(".tab-container");
-  // const tabMenuItems = tabContainer.querySelectorAll(".tab-title li");
-  // const tabContents = tabContainer.querySelectorAll(".tab-content");
-
-  // tabMenuItems.forEach((tabMenuItem) => {
-  //   tabMenuItem.addEventListener("click", () => {
-  //     tabMenuItems.forEach((item) => {
-  //       item.classList.remove("selected");
-  //     });
-  //     tabMenuItem.classList.add("selected");
-
-  //     tabContents.forEach((tabContent) => {
-  //       tabContent.classList.remove("selected");
-  //     });
-  //     document.getElementById(tabMenuItem.dataset.id).classList.add("selected");
-  //   });
-  // });
-
-});
-
-$(function () {
-  /*=================================================
   スクロール時のフェード表示
   ===================================================*/
   // スクロール時のイベント
